@@ -23,6 +23,6 @@ export const fetchChatGPTResponse = async (messages: string): Promise<string> =>
         return response.data.choices[0].message.content;
     } catch (error) {
         console.error('Error fetching data from DeepAI API:', error);
-        throw error;
+        throw error;   ///
     }
 };
