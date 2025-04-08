@@ -13,16 +13,16 @@ export const fetchChatGPTResponse = async (messages: string): Promise<string> =>
                 messages: [
                     { role: "user", content: messages } // Wrap the string in a message object
                 ],
-                temperature: 0.7,
+                temperature: 0.8, 
             },
             {
                 headers: {
-                    'Authorization': `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
-                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`, 
+                    'Content-Type': 'application/json', 
                 },
             }
         );
-        return response.data.choices[0].message.content;
+        return response.data.choices[0].message.content;  
     } catch (error) {
         console.error('Error fetching data from DeepAI API:', error);
         throw error;
